@@ -1,0 +1,45 @@
+buildscript {
+	repositories {
+		maven { url "https://repo.spring.io/libs-release" }
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.10.RELEASE")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+//mainClassName = 'hello.HelloWorld'
+
+// tag::repositories[]
+repositories {
+	maven { url "https://repo.spring.io/libs-release" }
+	mavenLocal()
+	mavenCentral()
+}
+// end::repositories[]
+
+// tag::jar[]
+jar {
+	baseName = 'gs-serving-web-content'
+	version =  '0.1.0'
+}
+// end::jar[]
+
+// tag::dependencies[]
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	testCompile("junit:junit")
+}
+// end::dependencies[]
+
+// tag::wrapper[]
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.11'
+}
+// end::wrapper[]
