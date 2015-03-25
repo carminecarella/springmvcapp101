@@ -1,6 +1,6 @@
 # springmvcapp-basic
 
-This is a basic and ready-to-use Spring Boot MVC project. It consists of a simple Controller and an html page.
+This is a basic and ready-to-use Spring Boot MVC project. It consists of a simple Controller and html page.
 
 Technologies
 - Gradle
